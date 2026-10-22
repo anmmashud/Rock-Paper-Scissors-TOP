@@ -7,13 +7,27 @@ const inputScissors = document.querySelector('#scissors-btn');
 const game = ["rock", "paper", "scissors"]
 let humanScore = 0;
 let computerScore = 0;
-
-// Get Computer choice
+let playGame = 0
 let computerChoice = ""
 let humanChoice = ""
 
 function getComputerChoice() {
     return computerChoice = game[Math.floor(Math.random() * game.length)];
+}
+
+function mainGame() {
+    if (playGame != 5) {
+        roundResults()
+    } else {
+        resetHistory();
+    }
+}
+
+function resetHistory() {
+    confirm("Do you want to start new game?")
+    playGame = 0;
+    humanScore = 0;
+    computerScore = 0;
 }
 
 function roundResults() {
@@ -23,23 +37,35 @@ function roundResults() {
     playRound(humanChoice, computerChoice);
     console.log("Your Score:", humanScore);
     console.log("Computer Score:", computerScore);
+    console.log("Round Played:", playGame + 1)
+    playGame++
+    if (playGame === 5) {
+        if (humanScore > computerScore) {
+            console.log("You WON The Match")
+        }
+        else if (humanScore < computerScore) {
+            console.log("You LOSE The Match")
+        } else {
+            console.log("Match is DRAW")
+        }
+    }
 }
 
 // Get Human choice
 inputRock.addEventListener("click",
     function clickedChoice() {
         humanChoice = "rock";
-        roundResults();
+        mainGame();
     })
 inputPaper.addEventListener("click",
     function clickedChoice() {
         humanChoice = "paper";
-        roundResults();
+        mainGame();
     })
 inputScissors.addEventListener("click",
     function clickedChoice() {
         humanChoice = "scissors";
-        roundResults();
+        mainGame();
     })
 
 function playRound(humanChoice, computerChoice) {
@@ -71,5 +97,9 @@ function playRound(humanChoice, computerChoice) {
         console.log("You win! Scissors beats Paper");
     }
 }
+
+
+// console.log("The game is over")
+
 
 

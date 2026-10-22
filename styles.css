@@ -1,0 +1,127 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    
+    /* background-color: lightgrey; */
+    /* max-width: ; */
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: .5rem 0;
+    background-color: lightgrey;
+    min-width: 100vh;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: grey; */
+    margin: 1rem 0;
+    /* border: .1rem solid lightgrey; */
+    background-color: rgba(207, 214, 255, 0.439);
+    border-radius: .5rem;
+    padding-top: 0rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-bottom:.5rem;
+
+}
+
+.status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 1rem;
+    border-radius: .5rem;
+    
+}
+
+.round-number {
+    /* border: .1rem solid pink; */
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: darkblue;
+    margin: .5rem 0;
+}
+
+.user, .bot {
+    display: flex;;
+    align-items: center;
+    flex-direction: column;
+    /* border: .1rem solid blue; */
+    min-width: 12rem;
+    padding: .5rem;
+    margin: 0;
+    border-radius: .5rem;
+    justify-content: center;
+    background-color: white;
+}
+
+.choose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    margin-top: .5rem;
+    border-radius: .5rem;
+    background-color: rgba(211, 211, 211, 0.365);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    min-width: 10rem;
+}
+.img {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.choosing-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: grey; */
+    /* border: .1rem solid red; */
+    /* : 2rem; */
+    min-width: 24rem;
+    /* margin-top: 3rem; */
+    /* z-index: 1000; */
+
+}
+
+button {
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: darkblue;
+    min-width: 7rem;
+    padding: .5rem 0;
+    border-radius: .25rem;
+}
+
+.result {
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 1rem 0;
+}

@@ -1,7 +1,21 @@
 // Connect to the buttons from HTML
+const roundNumber = document.querySelector('#round-number')
 const inputRock = document.querySelector('#rock-btn');
 const inputPaper = document.querySelector('#paper-btn');
 const inputScissors = document.querySelector('#scissors-btn');
+const humanChooseDis = document.querySelector('#human-choose-dis')
+const humanScoreDis = document.querySelector('#human-score-dis')
+const botChooseDis = document.querySelector('#bot-choose-dis')
+const botScoreDis = document.querySelector('#bot-score-dis')
+const disResult = document.querySelector('#result')
+
+
+
+
+
+
+
+
 
 // Main Array
 const game = ["rock", "paper", "scissors"]
@@ -11,44 +25,64 @@ let playGame = 0
 let computerChoice = ""
 let humanChoice = ""
 
+
+
+
+
 function getComputerChoice() {
     return computerChoice = game[Math.floor(Math.random() * game.length)];
 }
 
 function mainGame() {
-    if (playGame != 5) {
+    if (playGame < 5) {
         roundResults()
     } else {
-        resetHistory();
+        newGame();
     }
 }
 
-function resetHistory() {
-    confirm("Do you want to start new game?")
-    playGame = 0;
-    humanScore = 0;
-    computerScore = 0;
+function newGame() {
+    let confirmReset = confirm("Do you want to start new game?")
+    if (confirmReset === true) {
+        playGame = 0;
+        humanScore = 0;
+        computerScore = 0;
+    } else {
+        // roundResults()
+        return "---"
+    }
 }
 
 function roundResults() {
+
     computerChoice = getComputerChoice();
-    console.log("You choose:", humanChoice);
+
+
     console.log("Bot choose:", computerChoice);
     playRound(humanChoice, computerChoice);
     console.log("Your Score:", humanScore);
     console.log("Computer Score:", computerScore);
-    console.log("Round Played:", playGame + 1)
+    console.log("Round Played:", playGame)
     playGame++
     if (playGame === 5) {
         if (humanScore > computerScore) {
-            console.log("You WON The Match")
+            result.textContent = ("--- You WIN ---")
         }
         else if (humanScore < computerScore) {
-            console.log("You LOSE The Match")
+            result.textContent = ("--- You LOSE ---")
         } else {
-            console.log("Match is DRAW")
+            result.textContent = ("--- DRAW ---")
+
+            console.log("")
         }
     }
+
+    roundNumber.textContent = ("Round " + playGame);
+    humanChooseDis.textContent = (humanChoice.toUpperCase());
+    humanScoreDis.textContent = ("Score: " + humanScore);
+    botChooseDis.textContent = (computerChoice.toUpperCase());
+    botScoreDis.textContent = ("Score: " + computerScore);
+
 }
 
 // Get Human choice

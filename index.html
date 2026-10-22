@@ -9,18 +9,41 @@
 	</head>
 
 	<body>
+		<header>Rock, Paper, Scissors</header>
 
-		<div class="human-choice-btn" id="rock-btn">
-			<button type="button">Rock</button>
+		<div class="display">
+			<div class="round-number" id="round-number">Round </div>
+
+			<div class="status">
+				<div class="user">
+					<div class="img">You</div>
+					<div class="sccore" id="human-score-dis"></div>
+					<div class="choose" id="human-choose-dis"></div>
+				</div>
+
+				<div class="bot">
+					<div class="img">Bot</div>
+					<div class="sccore" id="bot-score-dis"></div>
+					<div class="choose" id="bot-choose-dis"></div>
+				</div>
+			</div>
 		</div>
 
-		<div class="human-choice-btn" id="paper-btn">
-			<button type="button">Paper</button>
+		<div class="choosing-btn">
+			<div class="human-choice-btn" id="rock-btn">
+				<button type="button">Rock</button>
+			</div>
+
+			<div class="human-choice-btn" id="paper-btn">
+				<button type="button">Paper</button>
+			</div>
+
+			<div class="human-choice-btn" id="scissors-btn">
+				<button type="button">Scissors</button>
+			</div>
 		</div>
 
-		<div class="human-choice-btn" id="scissors-btn">
-			<button type="button">Scissors</button>
-		</div>
+<div class="result" id="result"></div>
 
 	</body>
 </html>
